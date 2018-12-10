@@ -2,14 +2,33 @@
 ## functions do
 
 ## Write a short comment describing this function
-
+ #calculate the reverse of a square matrix and save the results
+ # cache the results
 makeCacheMatrix <- function(x = matrix()) {
-
+    m <- NULL
+    set <- function(y) {
+        x <<- y
+        m <<- NULL
+    }
+    get <- function() x
+    setMatrix <- function(solve) m <<- solve
+    getMatrix <- function() m
+    list(set = set, get = get,
+         setMatrix = setMatrix,
+         getMatrix = getMatrix)
 }
-
-
 ## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+
+
+cachemean <- function(x, ...) {
+    m <- x$getMatrix()
+    if(!is.null(m)) {
+        message("getting cached data")
+        return(m)
+    }
+    data <- x$get()
+    m <- solve(data, ...)
+    x$setMatrix(m)
+    m
 }
