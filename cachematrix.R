@@ -1,5 +1,6 @@
 ## Put comments here that give an overall description of what your
-## functions do
+## There are two functions, the first one must save a Matrix in the chache
+#while the second must calculate his reverse
 
 ## Write a short comment describing this function
  #calculate the reverse of a square matrix and save the results
